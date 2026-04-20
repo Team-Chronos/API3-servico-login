@@ -1,8 +1,5 @@
 package br.com.chronos.servicologin.usuario;
 
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -11,6 +8,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 @Repository
 public class RepositorioCredenciaisJdbc {
@@ -48,11 +48,11 @@ public class RepositorioCredenciaisJdbc {
             List<Usuario> encontrados = jdbcTemplate.query(
                 sql,
                 (rs, rowNum) -> new Usuario(
-                    rs.getLong("id"),
+                    (Integer) rs.getInt("id"),
                     rs.getString("nome"),
                     rs.getString("email"),
                     rs.getString("senha"),
-                    (Integer) rs.getObject("cargo_id")
+                    (Long) rs.getObject("cargo_id")
                 ),
                 email
             );

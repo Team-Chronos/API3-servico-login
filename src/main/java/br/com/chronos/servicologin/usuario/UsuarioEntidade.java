@@ -13,7 +13,7 @@ public class UsuarioEntidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false)
     private String nome;
@@ -25,19 +25,19 @@ public class UsuarioEntidade {
     private String passwordHash;
 
     @Column(name = "cargo_id", nullable = false)
-    private Integer cargoId;
+    private Long cargoId;
 
     protected UsuarioEntidade() {
     }
 
-    public UsuarioEntidade(String nome, String email, String passwordHash, Integer cargoId) {
+    public UsuarioEntidade(String nome, String email, String passwordHash, Long cargoId) {
         this.nome = nome;
         this.email = email;
         this.passwordHash = passwordHash;
         this.cargoId = cargoId;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -65,11 +65,11 @@ public class UsuarioEntidade {
         this.passwordHash = passwordHash;
     }
 
-    public Integer getCargoId() {
+    public Long getCargoId() {
         return cargoId;
     }
 
-    public void setCargoId(Integer cargoId) {
+    public void setCargoId(Long cargoId) {
         this.cargoId = cargoId;
     }
 }
