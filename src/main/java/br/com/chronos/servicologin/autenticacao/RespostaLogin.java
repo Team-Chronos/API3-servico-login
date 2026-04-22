@@ -5,5 +5,4 @@ public record RespostaLogin(
         String tokenType,
         long expiresIn,
         PayloadUsuario user
-) {
-}
+) {}

@@ -1,19 +1,14 @@
 package br.com.chronos.servicologin.autenticacao;
 
-import java.util.Map;
-
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/auth")
 public class ControladorAutenticacao {
 
     private final ServicoAutenticacao authService;
@@ -27,13 +22,9 @@ public class ControladorAutenticacao {
         return ResponseEntity.ok(authService.login(request));
     }
 
-    @GetMapping("/me")
-    public ResponseEntity<PayloadUsuario> me(Authentication authentication) {
-        return ResponseEntity.ok(authService.me(authentication.getName()));
-    }
-
+    // Opcional: endpoint de saúde
     @GetMapping("/health")
-    public ResponseEntity<Map<String, String>> health() {
-        return ResponseEntity.ok(Map.of("status", "ok", "service", "api3-servico-login"));
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("OK");
     }
 }

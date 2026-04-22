@@ -10,5 +10,4 @@ public record RequisicaoLogin(
 
         @NotBlank(message = "senha e obrigatoria")
         String senha
-) {
-}
+) {}

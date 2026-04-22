@@ -13,7 +13,7 @@ public class UsuarioEntidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;  // alterado para Long
 
     @Column(nullable = false)
     private String nome;
@@ -25,10 +25,9 @@ public class UsuarioEntidade {
     private String passwordHash;
 
     @Column(name = "cargo_id", nullable = false)
-    private Long cargoId;
+    private Long cargoId;  // já estava Long, manter
 
-    protected UsuarioEntidade() {
-    }
+    protected UsuarioEntidade() {}
 
     public UsuarioEntidade(String nome, String email, String passwordHash, Long cargoId) {
         this.nome = nome;
@@ -37,39 +36,13 @@ public class UsuarioEntidade {
         this.cargoId = cargoId;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public Long getCargoId() {
-        return cargoId;
-    }
-
-    public void setCargoId(Long cargoId) {
-        this.cargoId = cargoId;
-    }
+    public Long getId() { return id; }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+    public String getPasswordHash() { return passwordHash; }
+    public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
+    public Long getCargoId() { return cargoId; }
+    public void setCargoId(Long cargoId) { this.cargoId = cargoId; }
 }
