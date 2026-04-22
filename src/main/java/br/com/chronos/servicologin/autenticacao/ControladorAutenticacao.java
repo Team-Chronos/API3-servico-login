@@ -22,7 +22,6 @@ public class ControladorAutenticacao {
         return ResponseEntity.ok(authService.login(request));
     }
 
-    // Opcional: endpoint de saúde
     @GetMapping("/health")
     public ResponseEntity<String> health() {
         return ResponseEntity.ok("OK");

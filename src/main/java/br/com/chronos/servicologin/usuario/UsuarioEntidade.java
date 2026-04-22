@@ -13,7 +13,7 @@ public class UsuarioEntidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // alterado para Long
+    private Long id; 
 
     @Column(nullable = false)
     private String nome;
@@ -25,7 +25,7 @@ public class UsuarioEntidade {
     private String passwordHash;
 
     @Column(name = "cargo_id", nullable = false)
-    private Long cargoId;  // já estava Long, manter
+    private Long cargoId; 
 
     protected UsuarioEntidade() {}
 

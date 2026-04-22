@@ -13,7 +13,6 @@ public class ServicoAutenticacao {
     private final RepositorioCredenciaisJdbc credentialsRepository;
     private final ServicoJwt jwtService;
 
-    // Construtor sem PasswordEncoder
     public ServicoAutenticacao(RepositorioCredenciaisJdbc credentialsRepository,
                                ServicoJwt jwtService) {
         this.credentialsRepository = credentialsRepository;
@@ -26,7 +25,6 @@ public class ServicoAutenticacao {
         Usuario user = credentialsRepository.findByEmail(normalizedEmail)
                 .orElseThrow(() -> new BadCredentialsException("Email ou senha invalidos"));
 
-        // Comparação direta de texto plano (ou use BCrypt se o hash estiver correto)
         if (!request.senha().equals(user.passwordHash())) {
             throw new BadCredentialsException("Email ou senha invalidos");
         }

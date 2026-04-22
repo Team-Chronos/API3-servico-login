@@ -11,11 +11,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: none        # não tenta validar/alterar tabelas
+      ddl-auto: none       
     open-in-view: false
     show-sql: true
   security:
-    enabled: false          # DESLIGA completamente o Spring Security
+    enabled: false          
 
 app:
   jwt:
