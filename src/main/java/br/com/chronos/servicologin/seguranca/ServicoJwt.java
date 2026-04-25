@@ -47,16 +47,16 @@ public class ServicoJwt {
     }
 
     private List<String> obterRolesPorCargo(Long cargoId) {
-        if (cargoId == null) return List.of();
+        if (cargoId == null) return List.of("ROLE_USER");
         switch (cargoId.intValue()) {
             case 1:
-                return List.of("ROLE_ADMIN");
+                return List.of("ROLE_USER");   // Desenvolvedor
             case 2:
                 return List.of("ROLE_GERENTE_PROJETO");
             case 3:
                 return List.of("ROLE_FINANCE");
             default:
-                return List.of();
+                return List.of("ROLE_USER");
         }
     }
 
@@ -79,7 +79,7 @@ public class ServicoJwt {
                     .signWith(getSignInKey())
                     .compact();
 
-            log.info("Token gerado para {} (tamanho: {}) com roles: {}", user.email(), token.length(), roles);
+            log.info("Token gerado para {} com roles: {}", user.email(), roles);
             return token;
         } catch (Exception e) {
             log.error("Erro ao gerar token", e);
