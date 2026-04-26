@@ -13,7 +13,7 @@ public class UsuarioEntidade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; 
+    private Integer id; 
 
     @Column(nullable = false)
     private String nome;
@@ -36,7 +36,7 @@ public class UsuarioEntidade {
         this.cargoId = cargoId;
     }
 
-    public Long getId() { return id; }
+    public int getId() { return id; }
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
     public String getEmail() { return email; }
