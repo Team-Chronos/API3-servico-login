@@ -5,7 +5,7 @@ spring:
   application:
     name: login-api
   datasource:
-    url: jdbc:mysql://35.199.95.124:3306/gsw_database?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://35.198.58.59:3306/gsw_database?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: chronosapi
     password: "Bolsonaro#22"
     driver-class-name: com.mysql.cj.jdbc.Driver
