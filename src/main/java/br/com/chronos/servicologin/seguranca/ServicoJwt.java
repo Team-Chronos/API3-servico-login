@@ -50,7 +50,7 @@ public class ServicoJwt {
         if (cargoId == null) return List.of("ROLE_USER");
         switch (cargoId.intValue()) {
             case 1:
-                return List.of("ROLE_USER");   // Desenvolvedor
+                return List.of("ROLE_USER");   
             case 2:
                 return List.of("ROLE_GERENTE_PROJETO");
             case 3:
